@@ -40,11 +40,6 @@ const About = () => {
                     fill
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
-                  {/* Badge */}
-                  <div className="absolute top-6 right-6 z-20 bg-primary px-5 py-3 rounded-2xl shadow-xl flex items-center gap-2 border border-white/20">
-                    <Award className="text-white" size={20} />
-                    <span className="text-sm font-extrabold text-white whitespace-nowrap uppercase tracking-tighter">23+ Years Experience</span>
-                  </div>
                   
                   {/* Name Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
