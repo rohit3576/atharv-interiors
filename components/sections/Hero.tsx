@@ -56,31 +56,31 @@ const Hero = () => {
             <div className="h-20 w-[1px] bg-gradient-to-b from-primary/50 to-transparent" />
           </motion.div>
           
-          <h1 className="text-5xl md:text-8xl lg:text-9xl font-serif text-white tracking-tight leading-[0.9] italic">
+          <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-serif text-white tracking-tight leading-[1.1] md:leading-[0.9] italic">
             Atharva <br />
             <span className="text-gradient not-italic font-bold">Interiors</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-text max-w-xl mx-auto leading-relaxed font-light tracking-wide">
+          <p className="text-base sm:text-lg md:text-xl text-muted-text max-w-xl mx-auto leading-relaxed font-light tracking-wide px-4 sm:px-0">
             {companyInfo.tagline} with {companyInfo.experience} of crafting bespoke architectural narratives and luxury living spaces.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 pt-6 sm:pt-10">
             <a 
               href="#contact" 
-              className="group relative px-10 py-5 bg-primary text-white rounded-full font-bold transition-all overflow-hidden"
+              className="w-full sm:w-auto group relative px-8 sm:px-10 py-4 sm:py-5 bg-primary text-white rounded-full font-bold transition-all overflow-hidden text-center"
             >
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="relative z-10 flex items-center justify-center gap-2">
                 Start a Project
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
               </span>
               <div className="absolute inset-0 bg-secondary translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </a>
             <a 
               href={`tel:${companyInfo.phoneRaw}`}
-              className="group flex items-center gap-2 text-white font-bold hover:text-primary transition-colors py-4 px-2"
+              className="group flex items-center justify-center gap-2 text-white font-bold hover:text-primary transition-colors py-3 sm:py-4 px-2 text-sm sm:text-base"
             >
-              <Phone size={20} className="group-hover:rotate-12 transition-transform" />
+              <Phone size={18} className="group-hover:rotate-12 transition-transform" />
               Direct Line
             </a>
           </div>
@@ -91,12 +91,12 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-12 border-t border-white/10"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mt-16 sm:mt-24 pt-8 sm:pt-12 border-t border-white/10"
         >
           {companyInfo.stats.map((stat, index) => (
             <div key={index} className="space-y-1">
-              <h3 className="text-3xl md:text-4xl font-bold text-white">{stat.value}</h3>
-              <p className="text-sm text-muted-text uppercase tracking-wider">{stat.label}</p>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{stat.value}</h3>
+              <p className="text-[10px] sm:text-xs md:text-sm text-muted-text uppercase tracking-wider">{stat.label}</p>
             </div>
           ))}
         </motion.div>

@@ -66,15 +66,15 @@ const Process = () => {
                 </div>
 
                 {/* Content Card */}
-                <div className={`w-full md:w-[45%] pl-16 md:pl-0 ${
+                <div className={`w-full md:w-[45%] pl-12 sm:pl-16 md:pl-0 ${
                   index % 2 === 0 ? "md:text-right" : "md:text-left"
                 }`}>
-                  <div className="p-8 rounded-3xl bg-card border border-white/5 hover:border-primary/30 transition-colors">
-                    <span className="text-primary font-bold text-xs uppercase tracking-widest mb-2 block">
+                  <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-card border border-white/5 hover:border-primary/30 transition-colors">
+                    <span className="text-primary font-bold text-[10px] sm:text-xs uppercase tracking-widest mb-2 block">
                       Step 0{index + 1}
                     </span>
-                    <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                    <p className="text-muted-text leading-relaxed">
+                    <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">{step.title}</h3>
+                    <p className="text-sm sm:text-base text-muted-text leading-relaxed">
                       {step.description}
                     </p>
                   </div>
