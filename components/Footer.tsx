@@ -13,12 +13,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Company Info */}
         <div className="space-y-6">
-          <Link href="/" className="relative h-12 w-48 block">
+          <Link href="/" className="relative h-20 w-[300px] block group">
             <Image 
-              src="/assets/Logo (2).png" 
+              src="/assets/logo.png" 
               alt={companyInfo.name} 
               fill 
-              className="object-contain object-left"
+              className="object-contain object-left filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] group-hover:brightness-110 transition-all duration-300"
             />
           </Link>
           <p className="text-muted-text leading-relaxed max-w-xs">

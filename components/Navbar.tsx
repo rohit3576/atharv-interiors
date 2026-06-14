@@ -40,12 +40,12 @@ const Navbar = () => {
       )}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="relative h-12 w-48">
+        <Link href="/" className="relative h-12 w-[160px] sm:w-[180px] md:h-16 md:w-[240px] group transition-all duration-300">
           <Image 
-            src="/assets/Logo (2).png" 
+            src="/assets/logo.png" 
             alt={companyInfo.name} 
             fill 
-            className="object-contain object-left"
+            className="object-contain object-left filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] group-hover:brightness-110 transition-all duration-300"
             priority
           />
         </Link>

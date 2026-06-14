@@ -3,7 +3,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { companyInfo } from "@/data/company";
 
 const LoadingScreen = () => {
   const [loading, setLoading] = useState(true);
@@ -37,18 +39,22 @@ const LoadingScreen = () => {
         >
           <div className="relative flex flex-col items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-8"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="mb-12 relative h-28 w-[340px]"
             >
-              <span className="text-4xl md:text-6xl font-serif font-bold tracking-tighter text-white italic">
-                ATHARVA<span className="text-primary">.</span>
-              </span>
+              <Image 
+                src="/assets/logo.png" 
+                alt={companyInfo.name} 
+                fill 
+                className="object-contain filter drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]"
+                priority
+              />
             </motion.div>
 
             {/* Progress Bar Container */}
-            <div className="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden relative">
+            <div className="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden relative">
               <motion.div 
                 className="absolute inset-0 bg-primary"
                 initial={{ width: "0%" }}
@@ -56,25 +62,37 @@ const LoadingScreen = () => {
               />
             </div>
             
-            <motion.span 
-              className="mt-4 text-[10px] uppercase tracking-[0.4em] text-muted-text font-bold"
-              animate={{ opacity: [0.3, 1, 0.3] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
+            <motion.div 
+              className="mt-6 flex flex-col items-center gap-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
             >
-              Designing Excellence
-            </motion.span>
+              <span className="text-[10px] uppercase tracking-[0.5em] text-primary font-bold">
+                Atharva Interiors
+              </span>
+              <motion.span 
+                className="text-[9px] uppercase tracking-[0.3em] text-muted-text/60 font-medium"
+                animate={{ opacity: [0.3, 1, 0.3] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+              >
+                Transforming Spaces Into Beautiful Living Experiences
+              </motion.span>
+            </motion.div>
           </div>
 
           {/* Decorative Corner Accents */}
           <motion.div 
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            className="absolute top-10 left-10 w-20 h-20 border-t-2 border-l-2 border-primary/20" 
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="absolute top-10 left-10 w-20 h-20 border-t border-l border-primary/20" 
           />
           <motion.div 
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            className="absolute bottom-10 right-10 w-20 h-20 border-b-2 border-r-2 border-primary/20" 
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="absolute bottom-10 right-10 w-20 h-20 border-b border-r border-primary/20" 
           />
         </motion.div>
       )}
