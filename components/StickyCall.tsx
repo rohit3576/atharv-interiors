@@ -13,7 +13,7 @@ const StickyCall = () => {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       whileTap={{ scale: 0.95 }}
-      className="md:hidden fixed bottom-4 left-4 z-40 flex items-center justify-center p-4 bg-white/90 backdrop-blur-xl rounded-full shadow-2xl border border-primary/20 transition-all duration-300 group"
+      className="md:hidden fixed bottom-4 left-4 z-40 flex items-center justify-center p-4 bg-white/90 backdrop-blur-xl rounded-full shadow-2xl border border-primary/20 transition-all duration-300 group optimize-gpu will-change-transform"
       aria-label="Call Expert"
     >
       <div className="relative flex items-center justify-center">

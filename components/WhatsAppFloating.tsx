@@ -17,7 +17,7 @@ const WhatsAppFloating = () => {
       animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-40 p-4 bg-white/90 backdrop-blur-xl border border-primary/20 rounded-full shadow-2xl transition-all duration-300 group flex items-center justify-center"
+      className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-40 p-4 bg-white/90 backdrop-blur-xl border border-primary/20 rounded-full shadow-2xl transition-all duration-300 group flex items-center justify-center optimize-gpu will-change-transform"
       aria-label="Chat on WhatsApp"
     >
       <div className="relative flex items-center justify-center">
