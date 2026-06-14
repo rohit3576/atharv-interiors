@@ -7,22 +7,20 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { portfolioItems, portfolioCategories } from "@/data/portfolio";
 import SectionHeading from "../SectionHeading";
-import { Maximize2, X, Plus } from "lucide-react";
+import { Maximize2, X, Plus, Play } from "lucide-react";
 
 const INITIAL_DISPLAY_COUNT = 6;
 const LOAD_MORE_COUNT = 6;
 
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedItem, setSelectedItem] = useState<{image: string, video?: string} | null>(null);
   const [displayCount, setDisplayCount] = useState(INITIAL_DISPLAY_COUNT);
 
   const filteredItems = useMemo(() => {
-    const filtered = portfolioItems.filter(item => 
+    return portfolioItems.filter(item => 
       activeCategory === "All" || item.category === activeCategory
     );
-    // Reset display count when category changes
-    return filtered;
   }, [activeCategory]);
 
   // Reset display count whenever category changes
@@ -77,6 +75,7 @@ const Portfolio = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
                 className="group relative break-inside-avoid rounded-[2.5rem] overflow-hidden bg-white border border-border-custom shadow-soft cursor-pointer hover:shadow-2xl transition-all"
+                onClick={() => setSelectedItem({ image: item.image, video: item.video })}
               >
                 <div className="relative w-full h-full aspect-[3/4] group-even:aspect-[4/5]">
                   <Image 
@@ -86,6 +85,13 @@ const Portfolio = () => {
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
+                  
+                  {/* Video Indicator */}
+                  {item.video && (
+                    <div className="absolute top-6 right-6 z-20 w-12 h-12 rounded-full bg-primary/90 text-white flex items-center justify-center shadow-xl backdrop-blur-sm">
+                      <Play size={20} fill="currentColor" />
+                    </div>
+                  )}
                   
                   {/* Refined Overlay */}
                   <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[1px]" />
@@ -97,15 +103,9 @@ const Portfolio = () => {
                       </span>
                       <div className="flex items-center justify-between gap-4">
                         <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground italic leading-tight">{item.title}</h3>
-                        <button 
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedImage(item.image);
-                          }}
-                          className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center hover:bg-secondary transition-all shrink-0 shadow-lg shadow-primary/20"
-                        >
-                          <Maximize2 size={20} />
-                        </button>
+                        <div className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 shadow-lg shadow-primary/20">
+                          {item.video ? <Play size={20} fill="currentColor" /> : <Maximize2 size={20} />}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -136,7 +136,7 @@ const Portfolio = () => {
 
       {/* Lightbox */}
       <AnimatePresence>
-        {selectedImage && (
+        {selectedItem && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -144,18 +144,29 @@ const Portfolio = () => {
             className="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4 md:p-12"
           >
             <button 
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-8 right-8 text-white hover:text-primary transition-colors bg-white/10 p-3 rounded-full backdrop-blur-md"
+              onClick={() => setSelectedItem(null)}
+              className="absolute top-8 right-8 text-white hover:text-primary transition-colors bg-white/10 p-3 rounded-full backdrop-blur-md z-[70]"
             >
               <X size={32} />
             </button>
-            <div className="relative w-full h-full max-w-5xl max-h-[85vh]">
-              <Image 
-                src={selectedImage} 
-                alt="Selected portfolio image" 
-                fill 
-                className="object-contain rounded-3xl"
-              />
+            <div className="relative w-full h-full max-w-5xl max-h-[85vh] flex items-center justify-center">
+              {selectedItem.video ? (
+                <video 
+                  src={selectedItem.video} 
+                  controls 
+                  autoPlay 
+                  className="max-w-full max-h-full rounded-3xl shadow-2xl"
+                />
+              ) : (
+                <div className="relative w-full h-full">
+                  <Image 
+                    src={selectedItem.image} 
+                    alt="Selected portfolio image" 
+                    fill 
+                    className="object-contain rounded-3xl"
+                  />
+                </div>
+              )}
             </div>
           </motion.div>
         )}

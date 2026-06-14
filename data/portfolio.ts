@@ -6,9 +6,14 @@ export const portfolioCategories = [
   "Ceiling",
   "Safety Doors",
   "Wardrobes",
+  "Videos",
 ];
 
 export const portfolioItems = [
+  // Videos
+  { id: 101, title: "Signature Project Walkthrough", category: "Videos", image: "/assets/living room.jpeg", video: "/assets/Video 1.mp4" },
+  { id: 102, title: "Modern Interior Showcase", category: "Videos", image: "/assets/living room4.jpeg", video: "/assets/Video 2.mp4" },
+
   // Living Room
   { id: 1, title: "Modern Living Space", category: "Living Room", image: "/assets/living room.jpeg" },
   { id: 2, title: "Elegant Lounge Design", category: "Living Room", image: "/assets/living room1.jpeg" },
