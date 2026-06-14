@@ -2,20 +2,40 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { portfolioItems, portfolioCategories } from "@/data/portfolio";
 import SectionHeading from "../SectionHeading";
-import { Maximize2, X } from "lucide-react";
+import { Maximize2, X, Plus } from "lucide-react";
+
+const INITIAL_DISPLAY_COUNT = 6;
+const LOAD_MORE_COUNT = 6;
 
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [displayCount, setDisplayCount] = useState(INITIAL_DISPLAY_COUNT);
 
-  const filteredItems = portfolioItems.filter(item => 
-    activeCategory === "All" || item.category === activeCategory
-  );
+  const filteredItems = useMemo(() => {
+    const filtered = portfolioItems.filter(item => 
+      activeCategory === "All" || item.category === activeCategory
+    );
+    // Reset display count when category changes
+    return filtered;
+  }, [activeCategory]);
+
+  // Reset display count whenever category changes
+  React.useEffect(() => {
+    setDisplayCount(INITIAL_DISPLAY_COUNT);
+  }, [activeCategory]);
+
+  const visibleItems = filteredItems.slice(0, displayCount);
+  const hasMore = displayCount < filteredItems.length;
+
+  const handleLoadMore = () => {
+    setDisplayCount(prev => prev + LOAD_MORE_COUNT);
+  };
 
   return (
     <section id="portfolio" className="section-padding bg-background">
@@ -48,7 +68,7 @@ const Portfolio = () => {
           className="columns-1 sm:columns-2 lg:columns-3 gap-6 sm:gap-10 space-y-6 sm:space-y-10 px-4"
         >
           <AnimatePresence mode="popLayout">
-            {filteredItems.map((item) => (
+            {visibleItems.map((item) => (
               <motion.div
                 key={item.id}
                 layout
@@ -64,6 +84,7 @@ const Portfolio = () => {
                     alt={item.title} 
                     fill 
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   
                   {/* Refined Overlay */}
@@ -93,6 +114,24 @@ const Portfolio = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Load More Button */}
+        {hasMore && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-16 md:mt-24"
+          >
+            <button
+              onClick={handleLoadMore}
+              className="group flex items-center gap-3 px-10 py-5 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-2xl font-extrabold transition-all shadow-lg hover:shadow-primary/20 uppercase tracking-widest"
+            >
+              <Plus size={20} className="group-hover:rotate-90 transition-transform" />
+              Load More Works
+            </button>
+          </motion.div>
+        )}
       </div>
 
       {/* Lightbox */}
