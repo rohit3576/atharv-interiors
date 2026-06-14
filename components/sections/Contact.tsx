@@ -9,7 +9,7 @@ import * as z from "zod";
 import { motion } from "framer-motion";
 import { companyInfo } from "@/data/company";
 import SectionHeading from "../SectionHeading";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { MapPin, Phone, Send } from "lucide-react";
 import { formatWhatsAppLink } from "@/lib/utils";
 
 const contactSchema = z.object({

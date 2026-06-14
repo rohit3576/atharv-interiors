@@ -29,7 +29,7 @@ const Testimonials = () => {
     return () => clearInterval(timer);
   }, [nextStep, isAutoPlaying]);
 
-  const handleDragEnd = (event: any, info: PanInfo) => {
+  const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const swipeThreshold = 50;
     if (info.offset.x < -swipeThreshold) {
       setIsAutoPlaying(false);

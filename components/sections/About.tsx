@@ -5,7 +5,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle2, Award, Star, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Award, Star } from "lucide-react";
 import SectionHeading from "../SectionHeading";
 
 const features = [
