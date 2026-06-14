@@ -20,19 +20,17 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://atharvainteriors.com"),
-  title: {
-    default: `${companyInfo.name} | Premium Interior Designers in Virar & Palghar`,
-    template: `%s | ${companyInfo.name}`,
-  },
-  description: `${companyInfo.tagline}. 23+ years of excellence in Residential & Commercial Interior Design and Architectural Services in Virar, Palghar, and Mumbai.`,
+  title: "Atharva Interiors | Interior Designers & Architectural Services in Virar",
+  description: "Atharva Interiors provides premium interior design, architectural services, renovation, carpentry, civil work, and space planning solutions in Virar, Palghar, and surrounding regions.",
   keywords: [
     "Interior Designer Virar",
     "Interior Designer Palghar",
-    "Interior Designer Mumbai",
-    "Modular Kitchen Virar",
+    "Architectural Services Virar",
     "Home Interior Design",
-    "Architectural Services",
-    "Commercial Interior Design",
+    "Modular Kitchen Virar",
+    "Renovation Services",
+    "Civil Work",
+    "Space Planning",
     "Atharva Interiors",
   ],
   authors: [{ name: companyInfo.name }],
@@ -48,8 +46,8 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://atharvainteriors.com", // Replace with actual domain
     siteName: companyInfo.name,
-    title: `${companyInfo.name} | Premium Interior Design Services`,
-    description: `Transforming spaces into beautiful living experiences with 23+ years of expertise.`,
+    title: "Atharva Interiors | Interior Designers & Architectural Services in Virar",
+    description: "Atharva Interiors provides premium interior design, architectural services, renovation, carpentry, civil work, and space planning solutions in Virar, Palghar, and surrounding regions.",
     images: [
       {
         url: "/og-image.jpg", // Create this asset later
@@ -61,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: companyInfo.name,
-    description: companyInfo.tagline,
+    title: "Atharva Interiors | Interior Designers & Architectural Services in Virar",
+    description: "Atharva Interiors provides premium interior design, architectural services, renovation, carpentry, civil work, and space planning solutions in Virar, Palghar, and surrounding regions.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -86,7 +84,7 @@ export default function RootLayout({
     "telephone": companyInfo.phone,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Shop No. 191, Global City, J-Rustomjee Avenue, Building No. 33",
+      "streetAddress": "Shop No.191, Global City, J-Rustomjee, Avenue, Building No.33",
       "addressLocality": "Virar West",
       "addressRegion": "MH",
       "postalCode": "401303",

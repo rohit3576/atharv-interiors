@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { companyInfo } from "@/data/company";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { Mail, MapPin, Phone } from "lucide-react";
@@ -12,8 +13,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Company Info */}
         <div className="space-y-6">
-          <Link href="/" className="text-2xl font-bold tracking-tighter text-white">
-            ATHARVA<span className="text-primary">.</span>
+          <Link href="/" className="relative h-12 w-48 block">
+            <Image 
+              src="/assets/Logo (2).png" 
+              alt={companyInfo.name} 
+              fill 
+              className="object-contain object-left"
+            />
           </Link>
           <p className="text-muted-text leading-relaxed max-w-xs">
             {companyInfo.tagline}. Leading interior designers and architects since {companyInfo.established}.
@@ -47,11 +53,12 @@ const Footer = () => {
         <div className="space-y-6">
           <h4 className="text-lg font-bold">Services</h4>
           <ul className="space-y-4 text-muted-text">
-            <li>Residential Interiors</li>
-            <li>Commercial Interiors</li>
-            <li>Architectural Services</li>
-            <li>Modular Kitchen</li>
-            <li>Renovation & Execution</li>
+            <li>Interior Work</li>
+            <li>Exterior Work</li>
+            <li>Space Planning</li>
+            <li>Carpentry Services</li>
+            <li>Civil Work</li>
+            <li>Renovation</li>
           </ul>
         </div>
 
@@ -69,7 +76,7 @@ const Footer = () => {
             </li>
             <li className="flex gap-3 text-muted-text">
               <MapPin className="text-primary shrink-0" size={20} />
-              <span>{companyInfo.location}</span>
+              <span>{companyInfo.address}</span>
             </li>
           </ul>
         </div>

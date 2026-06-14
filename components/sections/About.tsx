@@ -5,12 +5,12 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Award, Star, ShieldCheck } from "lucide-react";
 import SectionHeading from "../SectionHeading";
 
 const features = [
   "23+ Years Experience",
-  "Customized Designs",
+  "End-to-End Solutions",
   "Timely Project Delivery",
   "Premium Quality Materials",
   "Expert Craftsmanship",
@@ -21,83 +21,138 @@ const About = () => {
   return (
     <section id="about" className="section-padding bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Image Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative z-10 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-              <Image 
-                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200" 
-                alt="Atharva Interiors Studio" 
-                width={800} 
-                height={1000}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            {/* Decorative Elements */}
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" />
-            
-            <div className="absolute bottom-8 left-8 z-20 glass p-6 rounded-2xl border border-white/10 hidden md:block">
-              <p className="text-4xl font-bold text-primary">23+</p>
-              <p className="text-sm font-semibold uppercase tracking-wider text-white">Years of Excellence</p>
-            </div>
-          </motion.div>
-
-          {/* Content Side */}
-          <div className="space-y-8">
-            <SectionHeading 
-              title="We Create Spaces That Inspire Living" 
-              subtitle="Our Legacy" 
-              centered={false} 
-            />
-            
+        {/* Founder Profile Section */}
+        <div className="mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="space-y-6"
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-5 relative"
             >
-              <p className="text-muted-text text-lg leading-relaxed">
-                Founded in 2003, <strong>Atharva Interiors</strong> has been a pioneer in creating bespoke living and working spaces in Virar, Palghar, and Mumbai. With over two decades of experience, we blend architectural precision with interior elegance.
-              </p>
-              
-              <p className="text-muted-text text-lg leading-relaxed">
-                Our philosophy is simple: Your space should be a reflection of your journey. Whether it&apos;s a cozy home or a dynamic office, we ensure every corner is optimized for beauty, comfort, and functionality.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-                {features.map((feature, index) => (
-                  <motion.div 
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 * index }}
-                    className="flex items-center gap-3"
-                  >
-                    <CheckCircle2 className="text-primary shrink-0" size={20} />
-                    <span className="text-white/90 font-medium">{feature}</span>
-                  </motion.div>
-                ))}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-secondary/50 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-card shadow-2xl aspect-[4/5]">
+                  <Image 
+                    src="/assets/profile.jpeg" 
+                    alt="Vinod V Menon - Founder of Atharva Interiors" 
+                    fill
+                    className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+                  />
+                  {/* Badge */}
+                  <div className="absolute top-6 right-6 z-20 glass px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
+                    <Award className="text-primary" size={18} />
+                    <span className="text-sm font-bold text-white whitespace-nowrap">23+ Years Experience</span>
+                  </div>
+                  
+                  {/* Name Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                    <h3 className="text-3xl font-bold text-white mb-1">Vinod V Menon</h3>
+                    <p className="text-primary font-medium tracking-wider uppercase text-sm">Founder & Visionary</p>
+                  </div>
+                </div>
               </div>
+            </motion.div>
 
-              <div className="pt-8">
-                <a 
-                  href="#contact" 
-                  className="inline-block px-10 py-4 bg-primary hover:bg-secondary text-white rounded-full font-bold transition-all"
-                >
-                  Our Work Process
-                </a>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:col-span-7 space-y-8"
+            >
+              <div className="space-y-4">
+                <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm">Our Leadership</span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                  Meet The Vision Behind <br />
+                  <span className="text-primary">Atharva Interiors</span>
+                </h2>
+              </div>
+              
+              <div className="p-8 rounded-3xl bg-card/50 border border-white/5 backdrop-blur-sm relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <Star size={80} className="text-primary" />
+                </div>
+                <p className="text-xl text-white/90 leading-relaxed italic relative z-10">
+                  &quot;Quality workmanship matters to us. Providing exceptional service and ensuring customer satisfaction is at the heart of everything we do. Your dream home deserves exceptional design.&quot;
+                </p>
+                <div className="mt-6 flex items-center gap-4">
+                  <div className="h-px w-12 bg-primary/50" />
+                  <span className="font-bold text-primary tracking-widest uppercase text-xs">Vinod V Menon</span>
+                </div>
               </div>
             </motion.div>
           </div>
+        </div>
+
+        {/* About Content Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <SectionHeading 
+              title="We Create Spaces That Inspire Living" 
+              subtitle="About Us" 
+              centered={false} 
+            />
+            
+            <div className="space-y-6 text-muted-text text-lg leading-relaxed">
+              <p>
+                <strong>Atharva Interiors</strong> is a team of planners, architects, and interior designers dedicated to creating beautiful, functional, and timeless spaces.
+              </p>
+              
+              <p>
+                With over 23 years of experience, we provide complete interior and exterior solutions including 2D and 3D home design, planning, false ceilings, waterproofing, POP work, wall finishes, renovation services, and architectural solutions.
+              </p>
+
+              <p>
+                We offer complete end-to-end services, from design and planning to material selection and execution. Whether modern, contemporary, urban, rustic, traditional, or minimalist, we create spaces tailored to our clients&apos; vision and lifestyle.
+              </p>
+
+              <p className="font-medium text-white/90">
+                We never compromise on quality and always strive to provide exceptional designs at a reasonable price. Your dream home deserves exceptional design.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          >
+            {features.map((feature, index) => (
+              <div 
+                key={index}
+                className="p-6 rounded-2xl bg-card border border-white/5 hover:border-primary/20 transition-all group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+                  <CheckCircle2 size={24} />
+                </div>
+                <h4 className="font-bold text-white">{feature}</h4>
+              </div>
+            ))}
+
+            {/* Trust Stats Box */}
+            <div className="sm:col-span-2 p-8 rounded-3xl bg-gradient-to-br from-primary to-secondary text-white shadow-xl shadow-primary/20">
+               <div className="grid grid-cols-2 gap-8">
+                  <div>
+                    <div className="text-4xl font-bold mb-1">23+</div>
+                    <div className="text-sm font-medium opacity-80 uppercase tracking-wider">Years of Excellence</div>
+                  </div>
+                  <div>
+                    <div className="text-4xl font-bold mb-1">5-Star</div>
+                    <div className="text-sm font-medium opacity-80 uppercase tracking-wider">Rated Service</div>
+                  </div>
+               </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

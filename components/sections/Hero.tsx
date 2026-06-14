@@ -57,12 +57,12 @@ const Hero = () => {
           </motion.div>
           
           <h1 className="text-5xl md:text-8xl lg:text-9xl font-serif text-white tracking-tight leading-[0.9] italic">
-            Artistic <br />
+            Atharva <br />
             <span className="text-gradient not-italic font-bold">Interiors</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-text max-w-xl mx-auto leading-relaxed font-light tracking-wide">
-            {companyInfo.experience} of crafting bespoke architectural narratives and luxury living spaces.
+            {companyInfo.tagline} with {companyInfo.experience} of crafting bespoke architectural narratives and luxury living spaces.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-10">

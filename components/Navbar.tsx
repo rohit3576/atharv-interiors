@@ -4,6 +4,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 import { companyInfo } from "@/data/company";
 import { cn } from "@/lib/utils";
@@ -39,10 +40,14 @@ const Navbar = () => {
       )}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-bold tracking-tighter text-white">
-            ATHARVA<span className="text-primary">.</span>
-          </span>
+        <Link href="/" className="relative h-12 w-48">
+          <Image 
+            src="/assets/Logo (2).png" 
+            alt={companyInfo.name} 
+            fill 
+            className="object-contain object-left"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}

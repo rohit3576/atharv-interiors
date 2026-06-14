@@ -87,9 +87,9 @@ const Testimonials = () => {
                 </p>
 
                 <div className="space-y-1">
-                  <h4 className="text-xl font-bold text-primary">{testimonials[index].name}</h4>
+                  <h4 className="text-xl font-bold text-primary">Verified Review</h4>
                   <p className="text-sm text-muted-text uppercase tracking-widest font-semibold">
-                    Verified Client • {testimonials[index].date}
+                    Trust Card • Happy Homeowner
                   </p>
                 </div>
               </div>

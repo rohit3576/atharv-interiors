@@ -131,24 +131,22 @@ const Contact = () => {
                   <Phone size={28} />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold mb-2">Call Us</h4>
-                  <p className="text-muted-text mb-1">Direct support and consultation</p>
-                  <a href={`tel:${companyInfo.phoneRaw}`} className="text-xl font-bold text-white hover:text-primary transition-colors">
-                    {companyInfo.phone}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex gap-6 items-start">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                  <Mail size={28} />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-2">Email Us</h4>
-                  <p className="text-muted-text mb-1">Send us your project brief</p>
-                  <a href={`mailto:${companyInfo.email}`} className="text-xl font-bold text-white hover:text-primary transition-colors">
-                    {companyInfo.email}
-                  </a>
+                  <h4 className="text-xl font-bold mb-4">Contact Details</h4>
+                  <div className="flex flex-wrap gap-4">
+                    <a 
+                      href={`tel:${companyInfo.phoneRaw}`} 
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-bold hover:bg-secondary transition-all shadow-lg shadow-primary/20"
+                    >
+                      <Phone size={18} /> Call Now
+                    </a>
+                    <a 
+                      href={formatWhatsAppLink(companyInfo.phoneRaw, "Hello, I'm interested in your interior design services.")}
+                      target="_blank"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-xl font-bold hover:opacity-90 transition-all shadow-lg shadow-green-500/20"
+                    >
+                      WhatsApp
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -157,36 +155,35 @@ const Contact = () => {
                   <MapPin size={28} />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold mb-2">Visit Our Studio</h4>
-                  <p className="text-muted-text mb-1">Drop by for a coffee and design talk</p>
-                  <p className="text-xl font-bold text-white leading-relaxed">
-                    {companyInfo.location}
+                  <h4 className="text-xl font-bold mb-2">Visit Our Office</h4>
+                  <p className="text-muted-text mb-4">Let&apos;s discuss your dream project in person.</p>
+                  <p className="text-xl font-bold text-white leading-relaxed mb-6">
+                    {companyInfo.address}
                   </p>
+                  <a 
+                    href="https://www.google.com/maps/dir/?api=1&destination=Atharva+Interiors+Global+City+Virar+West" 
+                    target="_blank" 
+                    className="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary rounded-xl font-bold hover:bg-primary hover:text-white transition-all"
+                  >
+                    Get Directions <Send size={18} />
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="w-full aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative">
-               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.431267440078!2d72.80268367116494!3d19.470845090184813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI4JzE1LjAiTiA3MsKwNDgnMDkuNyJF!5e0!3m2!1sen!2sin!4v1718361234567!5m2!1sen!2sin" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={true} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-            
-            <div className="text-center lg:text-left">
-              <a 
-                href="https://www.google.com/maps/dir/?api=1&destination=19.470845090184813,72.80268367116494" 
-                target="_blank" 
-                className="inline-flex items-center gap-2 text-primary font-bold hover:underline"
-              >
-                Get Directions to Office <Send size={16} />
-              </a>
+            {/* Map Section */}
+            <div className="space-y-6">
+              <div className="w-full aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.431267440078!2d72.80268367116494!3d19.470845090184813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI4JzE1LjAiTiA3MsKwNDgnMDkuNyJF!5e0!3m2!1sen!2sin!4v1718361234567!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={true} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             </div>
           </div>
         </div>
