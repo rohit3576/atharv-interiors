@@ -35,7 +35,7 @@ const LoadingScreen = () => {
             y: "-100%",
             transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
           }}
-          className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center"
+          className="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center"
         >
           <div className="relative flex flex-col items-center">
             <motion.div
@@ -48,13 +48,13 @@ const LoadingScreen = () => {
                 src="/assets/logo.png" 
                 alt={companyInfo.name} 
                 fill 
-                className="object-contain filter drop-shadow-[0_0_12px_rgba(255,255,255,0.15)]"
+                className="object-contain"
                 priority
               />
             </motion.div>
 
             {/* Progress Bar Container */}
-            <div className="w-64 h-[2px] bg-white/10 rounded-full overflow-hidden relative">
+            <div className="w-64 h-1 bg-background rounded-full overflow-hidden relative border border-border-custom">
               <motion.div 
                 className="absolute inset-0 bg-primary"
                 initial={{ width: "0%" }}
@@ -63,20 +63,20 @@ const LoadingScreen = () => {
             </div>
             
             <motion.div 
-              className="mt-6 flex flex-col items-center gap-2"
+              className="mt-8 flex flex-col items-center gap-2 text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <span className="text-[10px] uppercase tracking-[0.5em] text-primary font-bold">
-                Atharva Interiors
+              <span className="text-sm uppercase tracking-[0.4em] text-primary font-extrabold">
+                {companyInfo.name}
               </span>
               <motion.span 
-                className="text-[9px] uppercase tracking-[0.3em] text-muted-text/60 font-medium"
-                animate={{ opacity: [0.3, 1, 0.3] }}
+                className="text-[10px] uppercase tracking-[0.2em] text-muted-text font-bold"
+                animate={{ opacity: [0.4, 1, 0.4] }}
                 transition={{ repeat: Infinity, duration: 2 }}
               >
-                Transforming Spaces Into Beautiful Living Experiences
+                {companyInfo.tagline}
               </motion.span>
             </motion.div>
           </div>
@@ -86,13 +86,13 @@ const LoadingScreen = () => {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="absolute top-10 left-10 w-20 h-20 border-t border-l border-primary/20" 
+            className="absolute top-12 left-12 w-20 h-20 border-t-4 border-l-4 border-primary/20 rounded-tl-3xl" 
           />
           <motion.div 
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="absolute bottom-10 right-10 w-20 h-20 border-b border-r border-primary/20" 
+            className="absolute bottom-12 right-12 w-20 h-20 border-b-4 border-r-4 border-primary/20 rounded-br-3xl" 
           />
         </motion.div>
       )}

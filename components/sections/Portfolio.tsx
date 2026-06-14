@@ -26,15 +26,15 @@ const Portfolio = () => {
         />
 
         {/* Categories */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 sm:mb-20 px-4">
           {portfolioCategories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-all border ${
+              className={`px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-widest transition-all border-2 ${
                 activeCategory === category 
-                ? "bg-primary border-primary text-white" 
-                : "border-white/10 text-muted-text hover:border-primary hover:text-primary"
+                ? "bg-primary border-primary text-white shadow-lg shadow-primary/20" 
+                : "border-border-custom text-muted-text hover:border-primary hover:text-primary bg-white"
               }`}
             >
               {category}
@@ -45,37 +45,48 @@ const Portfolio = () => {
         {/* Grid */}
         <motion.div 
           layout
-          className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-8 space-y-4 sm:space-y-8 px-4"
+          className="columns-1 sm:columns-2 lg:columns-3 gap-6 sm:gap-10 space-y-6 sm:space-y-10 px-4"
         >
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item) => (
               <motion.div
                 key={item.id}
                 layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.6 }}
-                className="group relative break-inside-avoid rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden bg-card border border-white/5 cursor-pointer"
+                transition={{ duration: 0.5 }}
+                className="group relative break-inside-avoid rounded-[2.5rem] overflow-hidden bg-white border border-border-custom shadow-soft cursor-pointer hover:shadow-2xl transition-all"
               >
                 <div className="relative w-full h-full aspect-[3/4] group-even:aspect-[4/5]">
                   <Image 
                     src={item.image} 
                     alt={item.title} 
                     fill 
-                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[2px] flex flex-col justify-end p-6 sm:p-10">
-                    <span className="text-primary font-bold text-[10px] sm:text-xs uppercase tracking-[0.2em] mb-2 sm:mb-3">
-                      {item.category}
-                    </span>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-white mb-4 sm:mb-6 italic leading-tight">{item.title}</h3>
-                    <button 
-                      onClick={() => setSelectedImage(item.image)}
-                      className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white text-black flex items-center justify-center hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-500"
-                    >
-                      <Maximize2 size={20} className="sm:w-6 sm:h-6" />
-                    </button>
+                  
+                  {/* Refined Overlay */}
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[1px]" />
+                  
+                  <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="bg-white/95 backdrop-blur-md p-6 rounded-3xl shadow-2xl border border-white/50">
+                      <span className="text-primary font-extrabold text-[10px] uppercase tracking-[0.2em] mb-2 block">
+                        {item.category}
+                      </span>
+                      <div className="flex items-center justify-between gap-4">
+                        <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground italic leading-tight">{item.title}</h3>
+                        <button 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedImage(item.image);
+                          }}
+                          className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center hover:bg-secondary transition-all shrink-0 shadow-lg shadow-primary/20"
+                        >
+                          <Maximize2 size={20} />
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -91,20 +102,20 @@ const Portfolio = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 md:p-12"
+            className="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4 md:p-12"
           >
             <button 
               onClick={() => setSelectedImage(null)}
-              className="absolute top-8 right-8 text-white hover:text-primary transition-colors"
+              className="absolute top-8 right-8 text-white hover:text-primary transition-colors bg-white/10 p-3 rounded-full backdrop-blur-md"
             >
-              <X size={40} />
+              <X size={32} />
             </button>
-            <div className="relative w-full h-full max-w-5xl max-h-[80vh]">
+            <div className="relative w-full h-full max-w-5xl max-h-[85vh]">
               <Image 
                 src={selectedImage} 
                 alt="Selected portfolio image" 
                 fill 
-                className="object-contain"
+                className="object-contain rounded-3xl"
               />
             </div>
           </motion.div>

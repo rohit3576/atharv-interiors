@@ -61,7 +61,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="section-padding bg-background relative overflow-hidden">
+    <section id="testimonials" className="section-padding bg-white relative overflow-hidden">
       {/* Decorative background element */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[800px] h-[300px] md:h-[800px] bg-primary/5 rounded-full blur-[80px] md:blur-[120px] pointer-events-none" />
 
@@ -90,22 +90,22 @@ const Testimonials = () => {
               onDragEnd={handleDragEnd}
               className="absolute w-full max-w-4xl cursor-grab active:cursor-grabbing px-4"
             >
-              <div className="glass p-8 md:p-16 rounded-[2rem] md:rounded-[3rem] text-center relative border border-white/10 shadow-2xl">
-                <Quote className="absolute top-6 left-6 md:top-8 md:left-10 text-primary opacity-20 w-10 h-10 md:w-16 md:h-16" />
+              <div className="bg-white p-8 md:p-16 rounded-[2.5rem] md:rounded-[4rem] text-center relative border border-border-custom shadow-2xl">
+                <Quote className="absolute top-6 left-6 md:top-10 md:left-12 text-primary opacity-20 w-12 h-12 md:w-20 md:h-20" />
                 
-                <div className="flex justify-center gap-1 mb-6 md:mb-8">
+                <div className="flex justify-center gap-1.5 mb-8 md:mb-10">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="fill-primary text-primary md:w-[18px]" />
+                    <Star key={i} size={20} className="fill-primary text-primary md:w-[24px]" />
                   ))}
                 </div>
 
-                <p className="text-lg md:text-3xl font-serif italic text-white leading-relaxed mb-8 md:mb-10">
+                <p className="text-xl md:text-3xl font-serif italic text-foreground leading-relaxed mb-10 md:mb-12 font-medium">
                   &quot;{testimonials[index].review}&quot;
                 </p>
 
-                <div className="space-y-1">
-                  <h4 className="text-lg md:text-xl font-bold text-primary">Verified Review</h4>
-                  <p className="text-xs md:text-sm text-muted-text uppercase tracking-widest font-semibold">
+                <div className="space-y-2">
+                  <h4 className="text-xl md:text-2xl font-bold text-primary">Verified Review</h4>
+                  <p className="text-xs md:text-sm text-muted-text uppercase tracking-[0.2em] font-extrabold">
                     Trust Card • Happy Homeowner
                   </p>
                 </div>
@@ -113,27 +113,27 @@ const Testimonials = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Buttons - Hidden on small mobile, shown on tablet/desktop */}
-          <div className="hidden sm:flex absolute inset-y-1/2 w-full justify-between items-center pointer-events-none">
+          {/* Navigation Buttons */}
+          <div className="hidden sm:flex absolute inset-y-1/2 w-full justify-between items-center pointer-events-none px-4">
             <button
               onClick={() => { setIsAutoPlaying(false); prevStep(); }}
-              className="pointer-events-auto w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all backdrop-blur-sm"
+              className="pointer-events-auto w-14 h-14 rounded-full border border-border-custom bg-white flex items-center justify-center text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all shadow-lg"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={28} />
             </button>
             <button
               onClick={() => { setIsAutoPlaying(false); nextStep(); }}
-              className="pointer-events-auto w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all backdrop-blur-sm"
+              className="pointer-events-auto w-14 h-14 rounded-full border border-border-custom bg-white flex items-center justify-center text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all shadow-lg"
               aria-label="Next testimonial"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={28} />
             </button>
           </div>
         </div>
 
         {/* Progress Indicators */}
-        <div className="flex justify-center gap-2 md:gap-3 mt-8 md:mt-12">
+        <div className="flex justify-center gap-3 mt-12 md:mt-16">
           {testimonials.map((_, i) => (
             <button
               key={i}
@@ -142,20 +142,20 @@ const Testimonials = () => {
                 setDirection(i > index ? 1 : -1);
                 setIndex(i);
               }}
-              className={`h-1 transition-all rounded-full ${
-                i === index ? "w-8 md:w-12 bg-primary" : "w-3 md:w-4 bg-white/10"
+              className={`h-1.5 transition-all rounded-full ${
+                i === index ? "w-12 bg-primary" : "w-4 bg-primary/20"
               }`}
               aria-label={`Go to testimonial ${i + 1}`}
             />
           ))}
         </div>
 
-        <div className="text-center mt-12 md:mt-16 px-4">
-          <p className="text-muted-text text-xs mb-4 sm:hidden">Swipe left/right to read more reviews</p>
+        <div className="text-center mt-16 md:mt-20 px-4">
+          <p className="text-muted-text text-xs mb-4 sm:hidden font-bold uppercase tracking-widest">Swipe to read more</p>
           <a 
             href="https://www.justdial.com/Palghar/Atharva-Interiors-Next-To-Mgm-School-Virar-East/022PXX22-XX22-260305011813-L8K6_BZDET" 
             target="_blank"
-            className="text-muted-text hover:text-primary transition-colors text-[10px] md:text-sm font-bold tracking-widest uppercase border-b border-white/10 pb-1 inline-block"
+            className="text-primary hover:text-secondary transition-colors text-xs md:text-sm font-extrabold tracking-[0.2em] uppercase border-b-2 border-primary/20 pb-2 inline-block"
           >
             Read more reviews on Justdial
           </a>

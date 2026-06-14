@@ -36,27 +36,30 @@ const Navbar = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-12",
-        scrolled ? "py-4 glass border-b border-border-custom" : "py-6 bg-transparent"
+        scrolled ? "py-3 bg-white/90 backdrop-blur-md shadow-md" : "py-6 bg-transparent"
       )}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="relative h-12 w-[160px] sm:w-[180px] md:h-16 md:w-[240px] group transition-all duration-300">
+        <Link href="/" className="relative h-16 w-[180px] sm:w-[220px] md:h-20 md:w-[280px] group transition-all duration-300">
           <Image 
             src="/assets/logo.png" 
             alt={companyInfo.name} 
             fill 
-            className="object-contain object-left filter drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] group-hover:brightness-110 transition-all duration-300"
+            className="object-contain object-left"
             priority
           />
         </Link>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-white/80 hover:text-primary transition-colors"
+                className={cn(
+                  "text-sm font-bold uppercase tracking-wider transition-colors",
+                  scrolled ? "text-foreground hover:text-primary" : "text-foreground hover:text-primary"
+                )}
               >
                 {link.name}
               </Link>
@@ -67,19 +70,19 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-4">
           <a
             href={`tel:${companyInfo.phoneRaw}`}
-            className="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-secondary text-white rounded-full text-sm font-semibold transition-all shadow-lg shadow-primary/20"
+            className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-secondary text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-primary/20"
           >
-            <Phone size={16} />
+            <Phone size={18} />
             <span>Call Now</span>
           </a>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white p-2"
+          className="lg:hidden text-foreground p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
       </nav>
 
@@ -90,20 +93,30 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass absolute top-full left-0 right-0 border-t border-border-custom overflow-hidden"
+            className="lg:hidden bg-white absolute top-full left-0 right-0 border-t border-border-custom overflow-hidden shadow-2xl"
           >
-            <ul className="flex flex-col p-6 gap-4">
+            <ul className="flex flex-col p-8 gap-6">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium text-white/90 block py-2 hover:text-primary transition-colors"
+                    className="text-xl font-bold text-foreground block hover:text-primary transition-colors"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href={`tel:${companyInfo.phoneRaw}`}
+                  className="flex items-center justify-center gap-3 w-full py-4 bg-primary text-white rounded-xl font-bold"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Phone size={20} />
+                  Call Now
+                </a>
+              </li>
             </ul>
           </motion.div>
         )}

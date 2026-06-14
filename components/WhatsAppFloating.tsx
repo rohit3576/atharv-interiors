@@ -17,11 +17,11 @@ const WhatsAppFloating = () => {
       animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-40 p-3 sm:p-4 bg-[#25D366]/20 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl transition-all duration-300 hover:bg-[#25D366]/30 group flex items-center justify-center"
+      className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-40 p-4 bg-white/90 backdrop-blur-xl border border-primary/20 rounded-full shadow-2xl transition-all duration-300 group flex items-center justify-center"
       aria-label="Chat on WhatsApp"
     >
       <div className="relative flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#25D366] blur-xl opacity-20 group-hover:opacity-40 transition-opacity" />
+        <div className="absolute inset-0 bg-primary blur-xl opacity-10 group-hover:opacity-30 transition-opacity" />
         <span className="text-2xl sm:text-3xl relative z-10">💬</span>
       </div>
     </motion.a>

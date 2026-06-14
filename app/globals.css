@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0B1120;
-  --foreground: #F8FAFC;
-  --primary: #0F766E;
-  --secondary: #14B8A6;
-  --card: #111827;
-  --muted: #94A3B8;
-  --border-custom: rgba(255, 255, 255, 0.08);
+  --background: #F8FAF7;
+  --foreground: #222222;
+  --primary: #8CCB58;
+  --secondary: #6FBF4B;
+  --light-green: #A5D66F;
+  --card: #FFFFFF;
+  --muted: #666666;
+  --border-custom: #E5E7EB;
+  --nav-bg: rgba(255, 255, 255, 0.9);
 }
 
 @theme inline {
@@ -15,6 +17,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-light-green: var(--light-green);
   --color-card: var(--card);
   --color-muted-text: var(--muted);
   --color-border-custom: var(--border-custom);
@@ -38,7 +41,7 @@ body {
   position: relative;
 }
 
-/* Luxury Noise Texture Overlay */
+/* Professional Grain Texture (Very Subtle) */
 body::before {
   content: "";
   position: fixed;
@@ -46,45 +49,42 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
   pointer-events: none;
   z-index: 9999;
 }
 
 @layer base {
   h1, h2, h3, h4 {
-    @apply font-serif tracking-tight;
+    @apply font-serif tracking-tight text-foreground;
   }
 }
 
 /* Custom Utilities */
 .glass {
-  background: rgba(17, 24, 39, 0.4);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-primary to-secondary;
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-secondary to-primary;
 }
 
 .section-padding {
   @apply py-16 px-4 sm:py-24 sm:px-6 md:px-12 lg:px-24;
 }
 
-.mesh-gradient {
-  background: radial-gradient(at 0% 0%, rgba(15, 118, 110, 0.15) 0px, transparent 50%),
-              radial-gradient(at 100% 0%, rgba(20, 184, 166, 0.1) 0px, transparent 50%),
-              radial-gradient(at 100% 100%, rgba(15, 118, 110, 0.15) 0px, transparent 50%),
-              radial-gradient(at 0% 100%, rgba(20, 184, 166, 0.1) 0px, transparent 50%);
+.shadow-soft {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
 }
 
-.hero-glow {
-  background: radial-gradient(circle at center, rgba(15, 118, 110, 0.2) 0%, transparent 70%);
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5;
 }
 
-.mask-fade {
-  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+.btn-primary {
+  @apply bg-primary text-white hover:bg-secondary transition-colors duration-300 shadow-lg shadow-primary/20;
 }
