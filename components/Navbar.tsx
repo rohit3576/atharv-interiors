@@ -99,15 +99,6 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
-              <li className="pt-4">
-                <a
-                  href={`tel:${companyInfo.phoneRaw}`}
-                  className="flex items-center justify-center gap-2 w-full py-4 bg-primary text-white rounded-xl font-bold"
-                >
-                  <Phone size={20} />
-                  Call Now
-                </a>
-              </li>
             </ul>
           </motion.div>
         )}

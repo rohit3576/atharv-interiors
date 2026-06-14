@@ -14,25 +14,26 @@ const Hero = () => {
     offset: ["start start", "end start"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  // Reduced intensity for smoother mobile performance
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
   return (
     <section 
       ref={containerRef}
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden mesh-gradient"
+      className="relative min-h-[100svh] flex items-center justify-center overflow-hidden mesh-gradient"
     >
       {/* Background Image with Creative Mask */}
       <motion.div style={{ scale, y }} className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay grayscale"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay grayscale will-change-transform"
           style={{ 
             backgroundImage: "url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1920')",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background" />
         <div className="absolute inset-0 hero-glow" />
       </motion.div>
 
