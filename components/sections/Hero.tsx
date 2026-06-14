@@ -84,33 +84,40 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right Image */}
+          {/* Right Image - Hidden on Mobile for better flow */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative"
+            className="relative mt-12 lg:mt-0 hidden lg:block"
           >
-            <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
+            <div className="relative aspect-video sm:aspect-square lg:aspect-[4/5] rounded-[2rem] sm:rounded-[4rem] lg:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white group">
               <Image 
                 src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1920" 
                 alt="Luxury Interior" 
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              
+              {/* Architectural Frame Overlay (Subtle) */}
+              <div className="absolute inset-0 border-[20px] border-white/5 pointer-events-none" />
             </div>
             
-            {/* Experience Floating Badge */}
+            {/* Experience Floating Badge - Repositioned for Mobile */}
             <motion.div 
-              animate={{ y: [0, -15, 0] }}
+              animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-2xl border border-border-custom hidden md:block"
+              className="absolute -bottom-6 -right-4 sm:-bottom-10 sm:-left-10 bg-white p-4 sm:p-8 rounded-2xl sm:rounded-3xl shadow-2xl border border-border-custom z-20"
             >
-              <div className="text-4xl font-bold text-primary mb-1">23+</div>
-              <div className="text-xs font-bold uppercase tracking-widest text-muted-text">Years of<br />Excellence</div>
+              <div className="text-2xl sm:text-4xl font-extrabold text-primary mb-0.5 sm:mb-1">23+</div>
+              <div className="text-[8px] sm:text-xs font-extrabold uppercase tracking-widest text-muted-text leading-tight">Years of<br />Excellence</div>
             </motion.div>
+
+            {/* Decorative Blueprint Lines */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 border-t-2 border-r-2 border-primary/20 rounded-tr-[3rem] pointer-events-none hidden sm:block" />
+            <div className="absolute -bottom-6 -left-6 w-24 h-24 border-b-2 border-l-2 border-primary/20 rounded-bl-[3rem] pointer-events-none hidden sm:block" />
           </motion.div>
         </div>
       </div>
