@@ -1,0 +1,51 @@
+export const testimonials = [
+  {
+    id: 1,
+    name: "Ajay Malhotra",
+    review: "I liked their work commitment. The team ensures every detail is handled with precision.",
+    date: "5 hours ago",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Devesh Agre",
+    review: "Good service and good quality work. Very professional in their approach.",
+    date: "1 day ago",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Rakesh Jha",
+    review: "I liked their design & very cooperative team. They really listen to your vision.",
+    date: "1 day ago",
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "Atharva Menon",
+    review: "Very Supportive Staff. They made the entire design process smooth and stress-free.",
+    date: "4 days ago",
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: "Yuvas Film Production",
+    review: "One of the best Interior design company. Highly creative and efficient.",
+    date: "4 days ago",
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: "Sagar Ilias",
+    review: "I liked their working method. Very organized and transparent from start to finish.",
+    date: "4 days ago",
+    rating: 5,
+  },
+  {
+    id: 7,
+    name: "Aasha Chavan",
+    review: "Best Quality work. I'm extremely happy with the final outcome of my home.",
+    date: "4 days ago",
+    rating: 5,
+  },
+];
