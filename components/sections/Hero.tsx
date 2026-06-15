@@ -84,22 +84,28 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right Image - Hidden on Mobile for better flow */}
+          {/* Right Content - Video Background for Desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative mt-12 lg:mt-0 hidden lg:block"
+            className="relative mt-12 lg:mt-0 hidden lg:block h-full"
           >
-            <div className="relative aspect-video sm:aspect-square lg:aspect-[4/5] rounded-[2rem] sm:rounded-[4rem] lg:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white group">
-              <Image 
-                src="/assets/site.jpeg" 
-                alt="Atharva Interiors Project" 
-                fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+            <div className="relative aspect-video sm:aspect-square lg:aspect-[4/5] rounded-[2rem] sm:rounded-[4rem] lg:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white group bg-muted">
+              {/* Optimized Video Background */}
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                poster="/assets/site5.jpeg"
+              >
+                <source src="/assets/Video 2.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               
               {/* Architectural Frame Overlay (Subtle) */}
               <div className="absolute inset-0 border-[20px] border-white/5 pointer-events-none" />

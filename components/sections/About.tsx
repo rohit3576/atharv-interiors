@@ -5,7 +5,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle2, Award, Star } from "lucide-react";
+import { CheckCircle2, Award, Star, Quote } from "lucide-react";
 import SectionHeading from "../SectionHeading";
 
 const features = [
@@ -76,16 +76,22 @@ const About = () => {
                 </h2>
               </div>
               
-              <div className="p-8 sm:p-10 rounded-[2.5rem] bg-background border border-border-custom shadow-soft relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <Star size={100} className="text-primary" />
+              <div className="p-8 sm:p-12 rounded-[2.5rem] bg-[#0f5132] text-white shadow-2xl relative overflow-hidden group border-4 border-white/10">
+                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <Star size={100} className="text-white" />
                 </div>
-                <p className="text-xl sm:text-2xl text-foreground/80 leading-relaxed italic relative z-10 font-serif">
-                  &quot;Quality workmanship matters to us. Providing exceptional service and ensuring customer satisfaction is at the heart of everything we do. Your dream home deserves exceptional design.&quot;
-                </p>
-                <div className="mt-8 flex items-center gap-4">
-                  <div className="h-px w-12 bg-primary" />
-                  <span className="font-bold text-primary tracking-widest uppercase text-xs">Vinood Kumar Menon</span>
+                <div className="relative z-10">
+                  <Quote className="text-primary-foreground/20 w-12 h-12 mb-6" />
+                  <p className="text-xl sm:text-2xl leading-relaxed italic font-serif">
+                    &quot;Quality workmanship matters to us. Providing exceptional service and ensuring customer satisfaction is at the heart of everything we do. Your dream home deserves exceptional design.&quot;
+                  </p>
+                  <div className="mt-10 flex items-center gap-4">
+                    <div className="h-px w-12 bg-white/30" />
+                    <div>
+                      <span className="block font-bold tracking-widest uppercase text-sm">Vinood Kumar Menon</span>
+                      <span className="text-[10px] uppercase tracking-[0.2em] text-white/60 font-bold">Proprietor & Founder</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
