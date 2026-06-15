@@ -93,8 +93,8 @@ const Hero = () => {
           >
             <div className="relative aspect-video sm:aspect-square lg:aspect-[4/5] rounded-[2rem] sm:rounded-[4rem] lg:rounded-[3rem] overflow-hidden shadow-2xl border-4 sm:border-8 border-white group">
               <Image 
-                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1920" 
-                alt="Luxury Interior" 
+                src="/assets/site.jpeg" 
+                alt="Atharva Interiors Project" 
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
                 priority

@@ -78,7 +78,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": companyInfo.name,
-    "image": "https://atharvainteriors.com/logo.png",
+    "image": "https://atharvainteriors.com/assets/logo.png",
     "@id": "https://atharvainteriors.com",
     "url": "https://atharvainteriors.com",
     "telephone": companyInfo.phone,

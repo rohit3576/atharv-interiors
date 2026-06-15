@@ -31,20 +31,31 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="lg:col-span-5 relative"
             >
-              <div className="relative group">
+              <div className="relative group h-[500px] md:h-[600px]">
                 <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] -z-10 blur-2xl" />
-                <div className="relative rounded-[2.5rem] overflow-hidden border-8 border-background shadow-2xl aspect-[4/5]">
+                
+                {/* Primary Image (Larger) */}
+                <div className="absolute top-0 left-0 w-4/5 h-4/5 rounded-[2.5rem] overflow-hidden border-8 border-background shadow-2xl z-10">
                   <Image 
-                    src="/assets/profile.jpeg" 
+                    src="/assets/profile2.jpeg" 
                     alt="Vinood Kumar Menon - Proprietor" 
                     fill
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-top"
                   />
-                  
-                  {/* Name Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-                    <h3 className="text-3xl font-bold text-white mb-1">Vinood Kumar Menon</h3>
-                    <p className="text-primary font-bold tracking-wider uppercase text-sm">Proprietor & Founder</p>
+                </div>
+
+                {/* Secondary Image (Smaller/Staggered) */}
+                <div className="absolute bottom-0 right-0 w-3/5 h-3/5 rounded-[2rem] overflow-hidden border-8 border-background shadow-2xl z-20">
+                  <Image 
+                    src="/assets/profile.jpeg" 
+                    alt="Vinood Kumar Menon - On Site" 
+                    fill
+                    className="object-cover object-top"
+                  />
+                  {/* Name Overlay on the overlapping image */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                    <h3 className="text-xl font-bold text-white mb-0.5">Vinood Kumar Menon</h3>
+                    <p className="text-primary font-bold tracking-wider uppercase text-[10px]">Proprietor & Founder</p>
                   </div>
                 </div>
               </div>
