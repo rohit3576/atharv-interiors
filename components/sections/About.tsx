@@ -142,12 +142,12 @@ const About = () => {
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="p-6 rounded-3xl bg-white border border-border-custom shadow-soft hover:border-primary/30 transition-all group"
+                className="p-6 rounded-3xl bg-[#0f5132] border border-white/10 shadow-soft hover:border-primary/30 hover:bg-[#0c4027] transition-all group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-all">
+                <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-[#0f5132] transition-all">
                   <CheckCircle2 size={24} />
                 </div>
-                <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">{feature}</h4>
+                <h4 className="font-bold text-white group-hover:text-primary transition-colors">{feature}</h4>
               </div>
             ))}
 

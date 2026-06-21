@@ -68,13 +68,13 @@ const WhyChooseUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-8 rounded-3xl bg-white border border-border-custom shadow-soft hover:border-primary/30 transition-all group"
+              className="p-8 rounded-3xl bg-[#0f5132] border border-white/10 shadow-soft hover:border-primary/30 hover:bg-[#0c4027] transition-all group"
             >
-              <div className="w-16 h-16 rounded-2xl bg-primary text-white flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg shadow-primary/20">
+              <div className="w-16 h-16 rounded-2xl bg-white/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-[#0f5132] group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg shadow-black/20">
                 <reason.icon size={32} />
               </div>
-              <h4 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">{reason.title}</h4>
-              <p className="text-muted-text leading-relaxed">
+              <h4 className="text-2xl font-bold mb-4 text-white group-hover:text-primary transition-colors">{reason.title}</h4>
+              <p className="text-white/80 leading-relaxed group-hover:text-white transition-colors">
                 {reason.description}
               </p>
             </motion.div>
