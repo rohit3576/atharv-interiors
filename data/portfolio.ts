@@ -15,12 +15,9 @@ export const portfolioItems = [
   { id: 201, title: "On-Site Transformation", category: "Recent Work", image: "/assets/site.jpeg" },
   { id: 202, title: "Modern Interior Project", category: "Recent Work", image: "/assets/site1.jpeg" },
   { id: 203, title: "Site Progress Shot", category: "Recent Work", image: "/assets/site2.jpeg" },
-  { id: 204, title: "Contemporary Design", category: "Recent Work", image: "/assets/site3.jpeg" },
   { id: 205, title: "Luxury Living Site", category: "Recent Work", image: "/assets/site4.jpeg" },
   { id: 206, title: "Finished Living Area", category: "Recent Work", image: "/assets/site5.jpeg" },
   { id: 207, title: "Premium Kitchen Site", category: "Recent Work", image: "/assets/site6.jpeg" },
-  { id: 208, title: "Architectural Detail", category: "Recent Work", image: "/assets/site7.jpeg" },
-  { id: 209, title: "Designer Space", category: "Recent Work", image: "/assets/site8.jpeg" },
   { id: 210, title: "Site Excellence", category: "Recent Work", image: "/assets/site9.jpeg" },
 
   // Videos
