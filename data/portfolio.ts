@@ -17,7 +17,6 @@ export const portfolioItems = [
   { id: 203, title: "Site Progress Shot", category: "Recent Work", image: "/assets/site2.jpeg" },
   { id: 205, title: "Luxury Living Site", category: "Recent Work", image: "/assets/site4.jpeg" },
   { id: 206, title: "Finished Living Area", category: "Recent Work", image: "/assets/site5.jpeg" },
-  { id: 207, title: "Premium Kitchen Site", category: "Recent Work", image: "/assets/site6.jpeg" },
   { id: 210, title: "Site Excellence", category: "Recent Work", image: "/assets/site9.jpeg" },
 
   // Videos
