@@ -110,16 +110,6 @@ const Hero = () => {
               {/* Architectural Frame Overlay (Subtle) */}
               <div className="absolute inset-0 border-[20px] border-white/5 pointer-events-none" />
             </div>
-            
-            {/* Experience Floating Badge - Repositioned for Mobile */}
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -bottom-6 -right-4 sm:-bottom-10 sm:-left-10 bg-white p-4 sm:p-8 rounded-2xl sm:rounded-3xl shadow-2xl border border-border-custom z-20"
-            >
-              <div className="text-2xl sm:text-4xl font-extrabold text-primary mb-0.5 sm:mb-1">23+</div>
-              <div className="text-[8px] sm:text-xs font-extrabold uppercase tracking-widest text-muted-text leading-tight">Years of<br />Excellence</div>
-            </motion.div>
 
             {/* Decorative Blueprint Lines */}
             <div className="absolute -top-6 -right-6 w-24 h-24 border-t-2 border-r-2 border-primary/20 rounded-tr-[3rem] pointer-events-none hidden sm:block" />
