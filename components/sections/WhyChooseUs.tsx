@@ -37,9 +37,9 @@ const reasons = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="section-padding bg-warm-orange relative overflow-hidden">
-      <div className="absolute -top-20 right-0 w-80 h-80 bg-orange-200/25 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl -z-10" />
+    <section className="section-padding bg-gradient-to-br from-warm-orange via-warm-cream to-background relative overflow-hidden">
+      <div className="absolute -top-20 right-0 w-80 h-80 bg-[#FFC896]/35 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/15 rounded-full blur-3xl -z-10" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mb-16">
           <SectionHeading 

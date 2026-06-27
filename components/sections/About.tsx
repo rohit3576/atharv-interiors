@@ -19,9 +19,9 @@ const features = [
 
 const About = () => {
   return (
-    <section id="about" className="section-padding bg-warm-orange overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-orange-200/30 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-orange-200/20 rounded-full blur-3xl -z-10" />
+    <section id="about" className="section-padding bg-gradient-to-b from-background via-warm-cream to-warm-orange overflow-hidden relative">
+      <div className="absolute top-48 right-0 w-96 h-96 bg-[#FFC896]/40 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl -z-10" />
       <div className="max-w-7xl mx-auto">
         {/* Founder Profile Section - Image First */}
         <div className="mb-24">
