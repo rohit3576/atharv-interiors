@@ -19,7 +19,9 @@ const features = [
 
 const About = () => {
   return (
-    <section id="about" className="section-padding bg-white overflow-hidden">
+    <section id="about" className="section-padding bg-warm-orange overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-orange-200/30 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-orange-200/20 rounded-full blur-3xl -z-10" />
       <div className="max-w-7xl mx-auto">
         {/* Founder Profile Section - Image First */}
         <div className="mb-24">
@@ -39,6 +41,16 @@ const About = () => {
                   <Image 
                     src="/assets/profile2.jpeg" 
                     alt="Vinood Kumar Menon - Proprietor" 
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+
+                {/* Third Image - Floating Creative Accent */}
+                <div className="absolute top-2 right-2 w-[45%] h-[38%] rounded-[1.5rem] overflow-hidden border-[6px] border-white shadow-2xl z-30 rotate-[8deg] hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out">
+                  <Image 
+                    src="/assets/profile1.jpeg" 
+                    alt="Vinood Kumar Menon - Design Expertise" 
                     fill
                     className="object-cover object-top"
                   />

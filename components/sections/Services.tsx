@@ -9,7 +9,9 @@ import SectionHeading from "../SectionHeading";
 
 const Services = () => {
   return (
-    <section id="services" className="section-padding bg-background relative overflow-hidden">
+    <section id="services" className="section-padding bg-warm-orange relative overflow-hidden">
+      <div className="absolute top-20 right-20 w-72 h-72 bg-orange-200/25 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-10 left-10 w-64 h-64 bg-orange-200/20 rounded-full blur-3xl -z-10" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <SectionHeading 
           title="Bespoke Design Solutions" 

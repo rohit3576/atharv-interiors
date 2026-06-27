@@ -6,18 +6,22 @@ export const portfolioCategories = [
   "Ceiling",
   "Safety Doors",
   "Wardrobes",
+  "Designs",
   "Recent Work",
   "Videos",
 ];
 
 export const portfolioItems = [
   // Recent Work
-  { id: 201, title: "On-Site Transformation", category: "Recent Work", image: "/assets/site.jpeg" },
   { id: 202, title: "Modern Interior Project", category: "Recent Work", image: "/assets/site1.jpeg" },
   { id: 203, title: "Site Progress Shot", category: "Recent Work", image: "/assets/site2.jpeg" },
   { id: 205, title: "Luxury Living Site", category: "Recent Work", image: "/assets/site4.jpeg" },
   { id: 206, title: "Finished Living Area", category: "Recent Work", image: "/assets/site5.jpeg" },
   { id: 210, title: "Site Excellence", category: "Recent Work", image: "/assets/site9.jpeg" },
+  { id: 211, title: "Design Concept", category: "Designs", image: "/assets/design.jpeg" },
+  { id: 212, title: "Design Vision", category: "Designs", image: "/assets/design1.jpeg" },
+  { id: 213, title: "Design Detail", category: "Designs", image: "/assets/design2.jpeg" },
+  { id: 214, title: "Design Finish", category: "Designs", image: "/assets/design3.jpeg" },
 
   // Videos
   { id: 101, title: "Signature Project Walkthrough", category: "Videos", image: "/assets/living room.jpeg", video: "/assets/Video 1.mp4" },
